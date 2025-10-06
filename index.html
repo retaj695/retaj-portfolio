@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Retaj Al-Ansari - Portfolio</title>
+<style>
+body {
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#2f163ac8,#725493);
+  color:white;
+  scroll-behavior:smooth;
+  transition:background 0.5s;
+}
+h2{margin-bottom:15px;font-size:28px;color:#fff;}
+.menu-toggle{
+  position:fixed;top:15px;left:15px;font-size:28px;color:white;cursor:pointer;z-index:1000;
+}
+nav{
+  position:fixed;left:-220px;top:0;width:180px;height:100%;background:rgba(0,0,0,0.9);
+  padding-top:50px;transition:0.3s;z-index:999;
+}
+nav a{display:block;color:white;padding:12px;text-decoration:none;font-size:16px;}
+nav a:hover{background:#2ebf91;}
+nav.active{left:0;}
+
+/* ===== تعديلات الأقسام ===== */
+section{
+  min-height:60vh;
+  padding:25px 20px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
+  border:2px solid white;
+  border-radius:12px;
+  margin:10px auto;
+  max-width:900px;
+  background:rgba(255,255,255,0.05);
+}
+
+section.visible{opacity:1;transform:translateY(0);}
+#home{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:80px;}
+#home img{border-radius:0;width:200px;height:200px;object-fit:cover;margin:15px 0;transition:transform 0.5s;}
+
+/* زر Download CV */
+#home button {
+  background:white;
+  color:#2f163ac8;
+  padding:10px 20px;
+  border:2px solid white;
+  border-radius:20px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:15px;
+  transition:all 0.3s;
+}
+#home button:hover {
+  background:#d1c0f0;
+  color:#2f163ac8;
+}
+
+/* Color Picker */
+.color-picker{
+  position:fixed;top:50%;right:20px;width:60px;height:100px;display:flex;flex-direction:column;justify-content:space-around;
+  align-items:center;padding:8px;background:rgba(255,255,255,0.1);border-radius:12px;z-index:1000;transform:translateY(-50%);
+}
+.color-picker div{width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid white;transition:transform 0.2s;}
+.color-picker div:hover{transform:scale(1.2);}
+.color1{background:#2c348692;}
+.color2{background:#323292df;}
+.color3{background:#2f163ac8;}
+
+/* Items & Show More */
+.item-title{border:2px solid white;border-radius:10px;padding:12px 15px;margin-bottom:5px;background:rgba(255,255,255,0.1);}
+.item-title h3{margin:0;font-size:20px;}
+.item-content{display:none;padding:12px 15px;background:rgba(0,0,0,0.2);border-radius:10px;margin-bottom:15px;}
+.item-content img{max-width:100%;border-radius:8px;margin-top:8px;}
+
+/* زر Show More */
+.show-btn {
+  display:block;
+  margin:8px auto 0 auto;
+  background:#6a0dad;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+.show-btn:hover {
+  background:#8b2dc6;
+}
+
+#contact{text-align:center;}
+.social-icons img{width:35px;margin:0 10px;transition:transform 0.3s;}
+.social-icons img:hover{transform:scale(1.2);}
+footer{text-align:center;padding:15px;margin-top:15px;color:white;}
+</style>
+</head>
+<body>
+
+<div class="menu-toggle">☰</div>
+<nav id="sidebar">
+  <a href="#home">Home</a>
+  <a href="#about">About Me</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#certificates">Certificates</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h1 id="main-text"></h1>
+  <h2 id="sub-text"></h2>
+  <img src="packground.jpg" alt="Profile Picture">
+  <a href="cv.jpg" download>
+    <button>Download CV</button>
+  </a>
+</section>
+
+<div class="color-picker">
+  <div class="color1" onclick="changeBackground('#2c348692','#2c348692')"></div>
+  <div class="color2" onclick="changeBackground('#323292df','#4a99d9df')"></div>
+  <div class="color3" onclick="changeBackground('#2f163ac8','#2f163ac8')"></div>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a Computer Science student at Umm Al-Qura University with a strong interest in programming, web development, and artificial intelligence. I continuously strive to enhance my skills and contribute to meaningful projects that make a positive impact. I am interested in combining creativity with technical skills to deliver innovative and effective solutions. I am also committed to continuous learning and taking every opportunity to grow and contribute positively to the community.</p>
+</section>
+
+<section id="skills">
+  <h2>  My Skills</h2>
+
+  <div class="item-title">
+    <h3>Technical Skills</h3>
+    <button class="show-btn">Show More</button>
+  </div>
+  <div class="item-content">
+    <ul>
+      <li>Programming Languages (Python, Java, SQL, HTML & CSS)</li>
+      <li>Web Development (HTML, CSS, JavaScript)</li>
+      <li>Java Programming</li>
+      <li>Deep Learning</li>
+      <li>Database Management</li>
+    </ul>
+  </div>
+
+  <div class="item-title">
+    <h3>Soft Skills</h3>
+    <button class="show-btn">Show More</button>
+  </div>
+  <div class="item-content">
+    <ul>
+      <li>Problem Solving</li>
+      <li>Teamwork / Collaboration</li>
+      <li>Responsibility</li>
+      <li>Leadership</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2> My Projects</h2>
+  <div class="item-title"><h3>Behavior Classification Using Deep Learning</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content">
+    <p>CNN model to classify behaviors (fast walking, sitting, playing) from images.</p>
+    <ul><li>Real-time predictions with TensorFlow</li><li>Interactive interface with Tkinter</li><li>Applications in healthcare, security, marketing</li></ul>
+    <p><strong>Tech:</strong> Python, TensorFlow, CNN, Tkinter</p>
+  </div>
+  <div class="item-title"><h3>Virtual Database Management System</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content">
+    <p>Relational MySQL database for departments, employees, projects, and tasks.</p>
+    <ul><li>Supports many-to-many relationships</li><li>Tracks task assignments</li><li>Efficient RDBMS design</li></ul>
+    <p><strong>Tech:</strong> MySQL, ERD, SQL</p>
+  </div>
+  <div class="item-title"><h3>University Content Management System</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content">
+    <p>Platform to streamline academic operations.</p>
+    <ul><li>Course registration & scheduling</li><li>Real-time availability</li><li>Grade tracking & transcript downloads</li><li>Faculty management</li><li>Automated analytics</li></ul>
+    <p><strong>Tech:</strong> Software Engineering, UML, Prototype</p>
+  </div>
+  <div class="item-title"><h3>Web App Security with Skipfish</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content">
+    <p>Web security scans using Skipfish on Kali Linux.</p>
+    <ul><li>Identified XSS & SQL Injection</li><li>Compared Skipfish with Nikto, Burp Suite, OWASP ZAP</li><li>Mitigation recommendations</li></ul>
+    <p><strong>Tech:</strong> Skipfish, Kali Linux, VirtualBox</p>
+  </div>
+  <div class="item-title"><h3>Personality Analysis Website</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content">
+    <p>Interactive personality analysis website.</p>
+    <ul><li>Engaging UX</li><li>Lightweight interface</li><li>Basic web development</li></ul>
+    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+  </div>
+</section>
+
+<section id="certificates">
+  <h2> Certificates</h2>
+  <div class="item-title"><h3>LLM Prompt Engineering & LangChain</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content"><img src="Certificates1.jpg" alt="Certificate 1"></div>
+  <div class="item-title"><h3>UI/UX</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content"><img src="Certificates2.jpg" alt="Certificate 2"></div>
+  <div class="item-title"><h3>Journey to AI World</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content"><img src="Certificates3.jpg" alt="Certificate 3"></div>
+  <div class="item-title"><h3>AI and Entertainment</h3><button class="show-btn">Show More</button></div>
+  <div class="item-content"><img src="Certificates4.jpg" alt="Certificate 4"></div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="social-icons">
+    <a href="mailto:retaj.y.alansari@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+    <a href="https://www.linkedin.com/in/retaj-y-al-ansari-8466b233b" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+  </div>
+</section>
+
+<footer>© 2025 Retaj Al-Ansari</footer>
+
+<script>
+// Sidebar toggle
+document.querySelector(".menu-toggle").onclick = () => document.getElementById("sidebar").classList.toggle("active");
+
+// Scroll animation
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+  const top=window.scrollY;
+  sections.forEach(sec=>{
+    const offset=sec.offsetTop-200;
+    const height=sec.offsetHeight;
+    if(top>=offset && top<offset+height) sec.classList.add("visible");
+  });
+});
+
+// Show More toggle
+const showBtns=document.querySelectorAll(".show-btn");
+showBtns.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const content=btn.parentElement.nextElementSibling;
+    if(content.style.display==="block"){content.style.display="none";btn.innerText="Show More";}
+    else{content.style.display="block";btn.innerText="Show Less";}
+  });
+});
+
+// Change Background
+function changeBackground(c1,c2){document.body.style.background=`linear-gradient(135deg, ${c1}, ${c2})`;}
+
+// Typing effect
+const mainText="Hello! I’m Retaj Al-Ansari";
+const subText="Computer Science Student | Web Developer | AI Enthusiast";
+function typeText(eId,text,speed=100,callback=null){
+  let i=0;
+  const elem=document.getElementById(eId);
+  elem.innerHTML="";
+  const interval=setInterval(()=>{
+    elem.innerHTML+=text.charAt(i);i++;
+    if(i>=text.length){clearInterval(interval);if(callback)callback();}
+  },speed);
+}
+window.addEventListener("load",()=>{typeText("main-text",mainText,80,()=>{typeText("sub-text",subText,40);});});
+</script>
+
+</body>
+</html>
+
+
